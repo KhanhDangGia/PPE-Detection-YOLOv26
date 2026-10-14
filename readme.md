@@ -4,6 +4,9 @@
 
 ---
 
+## 📺 Project Demo
+👉 [Click here to watch the system demo on Google Drive](https://drive.google.com/file/d/11DhyZULTP6giOeTa3UVSx5LweRJKTA_G/view?usp=sharing)
+
 ## 📌 Tính Năng Chính
 - **Quét Camera Live (Real-time):** Hỗ trợ kết nối qua Webcam máy tính hoặc luồng **RTSP** từ Camera IP / Ứng dụng điện thoại (như *OctoStream*).
 - **Phát hiện vi phạm:** Tự động quét và nhận diện người không đội mũ bảo hộ / không mặc áo vest.
