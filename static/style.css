@@ -1,0 +1,167 @@
+:root {
+    --bg-main: #0b1120;
+    --bg-panel: #1e293b;
+    --bg-hover: #334155;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --accent: #38bdf8;
+    --green: #4ade80;
+    --red: #f87171;
+    --orange: #fb923c;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+html, body { height: 100%; }
+body { background: var(--bg-main); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; overflow-y: auto; }
+
+header {
+    background: var(--bg-panel); padding: 15px 30px; border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-shrink: 0;
+}
+
+.logo { font-weight: bold; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; color: var(--accent); }
+.pulse { width: 10px; height: 10px; background: var(--red); border-radius: 50%; animation: blink 1.5s infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.dashboard { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+
+
+/* ============ CAMERA SOURCE ROW (MỚI THÊM) ============ */
+.camera-source-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.camera-source-row label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.camera-source-row select,
+.camera-source-row input[type="text"] {
+    background: var(--bg-hover);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.camera-source-row input[type="text"] {
+    flex: 1;
+    min-width: 300px;
+}
+/* ============ HẾT CAMERA SOURCE ROW ============ */
+
+
+/* ============ CAMERA PANEL (MỚI THÊM) ============ */
+.camera-section {
+    background: var(--bg-panel);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    padding: 20px;
+}
+
+.camera-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.camera-status-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.btn-start {
+    background: rgba(74, 222, 128, 0.15);
+    color: var(--green);
+    border-color: var(--green);
+}
+.btn-start:hover:not(:disabled) {
+    background: var(--green);
+    color: #052e16;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Khung chua luong video: gioi han chieu cao ro rang, khong de video (dac
+   biet la video doc/portrait tu dien thoai) keo dai toan bo trang lam nguoi
+   dung phai zoom trinh duyet xuong 25% moi thay het. object-fit:contain giu
+   nguyen ty le khung hinh, khong bi meo. */
+.video-wrapper {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    max-height: 68vh;
+}
+
+.video-wrapper img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 68vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+/* ============ HẾT CAMERA PANEL ============ */
+
+/* Stats */
+.stats-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.stat-box { background: var(--bg-panel); padding: 20px; border-radius: 8px; border: 1px solid var(--border); }
+.stat-box .title { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; text-transform: uppercase; }
+.stat-box .value { font-size: 2rem; font-weight: bold; }
+.text-green { color: var(--green); }
+.text-red { color: var(--red); }
+
+/* Layout Grid */
+.main-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; flex: 1; min-height: 420px; }
+
+.list-section, .detail-section {
+    background: var(--bg-panel); border-radius: 8px; border: 1px solid var(--border); padding: 20px;
+    display: flex; flex-direction: column;
+    max-height: 65vh;
+}
+
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.section-header h2 { font-size: 1.1rem; }
+
+/* Table */
+.table-wrapper { overflow-y: auto; flex: 1; }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
+th { color: var(--text-muted); padding: 12px; border-bottom: 2px solid var(--border); position: sticky; top: 0; background: var(--bg-panel); }
+td { padding: 12px; border-bottom: 1px solid var(--border); }
+tr:hover { background: var(--bg-hover); cursor: pointer; }
+
+/* Tags & Buttons */
+.tag { padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
+.tag-unreviewed { background: rgba(248, 113, 113, 0.2); color: var(--red); }
+.tag-reviewed { background: rgba(74, 222, 128, 0.2); color: var(--green); }
+
+.btn { background: var(--bg-hover); border: 1px solid var(--border); color: var(--text-main); padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+.btn:hover { background: var(--accent); color: #000; border-color: var(--accent); }
+.btn-sm { padding: 4px 8px; font-size: 0.8rem; }
+.btn-danger { background: rgba(248, 113, 113, 0.1); color: var(--red); border-color: var(--red); }
+.btn-danger:hover:not(:disabled) { background: var(--red); color: white; }
+
+/* Detail Panel */
+.detail-placeholder { display: flex; align-items: center; justify-content: center; height: 100%; color: var(--text-muted); }
+.detail-card { overflow-y: auto; }
+.detail-card img { max-width: 100%; max-height: 40vh; object-fit: contain; border-radius: 6px; border: 1px solid var(--border); margin-top: 15px; }
+.detail-card p { margin-top: 10px; font-size: 0.95rem; }
+.detail-actions { margin-top: 20px; display: flex; gap: 10px; }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vision | Control Panel</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="pulse"></span> AI VISION MONITOR
+        </div>
+        <div class="time" id="sys-time">00:00:00</div>
+    </header>
+
+    <div class="dashboard">
+
+        <!-- ============ PANEL CAMERA (MỚI THÊM) ============ -->
+        <div class="camera-section">
+            <div class="section-header">
+                <h2>Camera AI Giám Sát Trực Tiếp</h2>
+            </div>
+
+            <div class="camera-source-row">
+                <label for="sourceType">Nguồn video:</label>
+                <select id="sourceType">
+                    <option value="webcam">Webcam máy tính</option>
+                    <option value="rtsp">Camera IP (RTSP URL)</option>
+                    <option value="file">File video (đường dẫn)</option>
+                </select>
+
+                <input type="text" id="sourceInput"
+                       placeholder="Ví dụ: rtsp://admin:matkhau@192.168.1.100:554/stream1"
+                       style="display:none;" />
+            </div>
+
+            <div class="camera-buttons">
+                <button id="btnStartCamera" class="btn btn-start">Bật Camera AI</button>
+                <button id="btnStopCamera" class="btn btn-danger" disabled>Tắt Camera</button>
+                <span id="cameraStatus" class="camera-status-text">Trạng thái: Đã tắt</span>
+            </div>
+
+            <div id="videoContainer" class="video-wrapper" style="display:none;">
+                <img id="videoFeed" src="" alt="Luồng camera AI" />
+            </div>
+        </div>
+        <!-- ============ HẾT PANEL CAMERA ============ -->
+
+        <!-- Bảng Thống kê -->
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="title">Tổng phát hiện</div>
+                <div class="value" id="stat-total">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="title">Hôm nay</div>
+                <div class="value text-green" id="stat-today">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="title">Tuần này</div>
+                <div class="value" id="stat-week">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="title">Chưa kiểm duyệt</div>
+                <div class="value text-red" id="stat-unreviewed">0</div>
+            </div>
+        </div>
+
+        <div class="main-layout">
+            <!-- Danh sách phát hiện -->
+            <div class="list-section">
+                <div class="section-header">
+                    <h2>Nhật ký Phát hiện</h2>
+                    <button onclick="loadDetections()" class="btn">Làm mới</button>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Thời gian</th>
+                                <th>Camera / Vị trí</th>
+                                <th>Tỉ lệ</th>
+                                <th>Trạng thái</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detections-list">
+                            <!-- Dữ liệu render từ JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Khung chi tiết -->
+            <div class="detail-section">
+                <h2>Chi tiết sự kiện</h2>
+                <div id="detail-content" class="detail-placeholder">
+                    Chọn một sự kiện để xem chi tiết và hình ảnh
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
