@@ -7,6 +7,28 @@
 ## 📺 Project Demo
 👉 [Click here to watch the system demo on Google Drive](https://drive.google.com/file/d/11DhyZULTP6giOeTa3UVSx5LweRJKTA_G/view?usp=sharing)
 
+## 📊 Dataset & Training Results
+
+### 1. Dataset Instance Distribution
+The model was trained on a consolidated dataset of 4,000 curated construction site images with targeted augmentations:
+
+| Class Name | Training Instances | Validation Instances |
+| :--- | :---: | :---: |
+| 👤 **Class 0 (Head)** | 24,577 | 4,781 |
+| 🪖 **Class 1 (Helmet)** | 8,897 | 2,225 |
+| 🦺 **Class 2 (Vest)** | 3,488 | 863 |
+| ❌ **Class 3 (No-vest)** | 8,066 | 2,166 |
+| **Total** | **45,028** | **10,035** |
+
+### 2. Model Performance Metrics
+Detailed training curves and verification metrics are stored in the `Training_result/` directory.
+- **Peak mAP50:** `91.37%` (Achieved at Epoch 62)
+- **Peak Precision:** `88.48%` (Achieved at Epoch 64)
+- **Peak Recall:** `85.74%` (Achieved at Epoch 73)
+- **mAP50-95:** `57.30%`
+
+![Training Results](Training_result/results.png)
+
 ## 📌 Tính Năng Chính
 - **Quét Camera Live (Real-time):** Hỗ trợ kết nối qua Webcam máy tính hoặc luồng **RTSP** từ Camera IP / Ứng dụng điện thoại (như *OctoStream*).
 - **Phát hiện vi phạm:** Tự động quét và nhận diện người không đội mũ bảo hộ / không mặc áo vest.
