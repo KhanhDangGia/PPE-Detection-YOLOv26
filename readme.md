@@ -50,8 +50,6 @@ The dataset was built in the Kaggle notebook by merging three labeled sources in
 | Additional source 1 (`no-vest`) | 778 (622 train / 156 valid) | Offline augmentation: 2 extra copies per image |
 | Additional source 2 | 2,322 (1,593 train / 478 valid / 251 test) | Offline augmentation: 2 extra copies per image |
 
-- **Final split:** **TODO: N** training images and **TODO: N** validation images (see the `train:` and `val:` scan lines in the training log).
-- **Sources and licenses:** **TODO: name and license of each dataset**
 
 Annotated instances (individual labeled bounding boxes, not images):
 
