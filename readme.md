@@ -25,7 +25,7 @@ A real-time safety monitoring system for construction sites, built with Ultralyt
 ## Model and Training
 
 - **Model:** Ultralytics YOLO26n (nano), fine-tuned from the pretrained `yolo26n.pt` weights on a custom 4-class dataset of construction-site images.
-- **Training platform:** Kaggle (GPU), August 2026. Notebook: **TODO: Kaggle notebook link, or remove this line**
+- **Training platform:** Kaggle (GPU), August 2026. Notebook: **https://www.kaggle.com/code/geghnishkhan/notebookb4cf8b155e**
 - **Classes:** `0` Head, `1` Helmet, `2` Vest, `3` No-vest
 
 ### Training configuration
